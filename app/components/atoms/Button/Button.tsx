@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({ label, icon, iconSize, disabled, testId
         <button
             className={clsx(styles['ral-button'])}
             {...(disabled && { disabled: true })}
-            data-testid={testId ? testId : 'ral-button'}
+            data-testid={testId ? testId : 'ral-test--button'}
             onClick={onClick}
             {...props}>
             {icon && <Icon name={icon} size={iconSize ? iconSize : 'sm'} />}

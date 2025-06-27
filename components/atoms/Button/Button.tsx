@@ -1,6 +1,6 @@
 import React from 'react'
-import Icon from '@atom/Icon/Icon'
-import type { IconName, IconSize } from '@atom/Icon/icon.types'
+import Icon from '@/components/atoms/Icon/Icon'
+import type { IconName, IconSize } from '@/components/atoms/Icon/icon.types'
 import styles from './Button.module.scss'
 import clsx from 'clsx'
 

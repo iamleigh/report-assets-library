@@ -12,7 +12,7 @@ describe('Icon', () => {
      */
     it('renders with default size', () => {
         render(<Icon name="add" />)
-        const IconElement = screen.getByTestId('icon')
+        const IconElement = screen.getByTestId('ral-test--icon')
 
         expect(IconElement).toBeInTheDocument()
     })
@@ -23,10 +23,10 @@ describe('Icon', () => {
      * This test ensures the correct class is applied when a custom size
      * gets passed.
      */
-    // it('renders with specific size', () => {
-    //     render(<Icon name="add" size="lg" />)
-    //     const IconElement = screen.getByTestId('icon')
+    it('renders with specific size', () => {
+        render(<Icon name="add" size="lg" />)
+        const IconElement = screen.getByTestId('ral-test--icon')
 
-    //     expect(IconElement).toBeInTheDocument()
-    // })
+        expect(IconElement).toBeInTheDocument()
+    })
 })

@@ -3,6 +3,7 @@
  * @type {import("prettier").Config}
  */
 const config = {
+    plugins: ['prettier-plugin-tailwindcss'],
     overrides: [
         {
             files: ['*.js', '*.jsx', '*.ts', '*.tsx'],

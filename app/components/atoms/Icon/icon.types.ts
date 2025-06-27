@@ -1,9 +1,10 @@
-import { faArrowUp, faAdd } from '@fortawesome/free-solid-svg-icons'
+import { faArrowUp, faAdd, faHand } from '@fortawesome/free-solid-svg-icons'
 import type { SizeProp } from '@fortawesome/fontawesome-svg-core'
 
 export const iconNameMap = {
     up: faArrowUp,
     add: faAdd,
+    hand: faHand
 }
 
 export type IconName = keyof typeof iconNameMap

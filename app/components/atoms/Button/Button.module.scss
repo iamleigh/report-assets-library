@@ -1,0 +1,29 @@
+.ral-button {
+    // Button Shape
+    @apply inline-flex;
+    @apply items-center;
+    @apply px-4;
+    @apply py-2;
+    @apply rounded-lg;
+    @apply bg-gray-400;
+    
+    // Typography
+    @apply text-white;
+    @apply text-sm;
+    @apply transition-all;
+
+    &:hover {
+        @apply hover:bg-gray-600;
+    }
+
+    &:disabled {
+        pointer-events: none;
+        @apply cursor-not-allowed;
+        @apply bg-gray-100;
+        @apply text-gray-400;
+    }
+
+    &__label {
+        @apply pl-2;
+    }
+}

@@ -50,11 +50,16 @@ const PanelFeatured: React.FC = () => {
             <Modal
                 icon="hand"
                 title="Request Access"
-                description="The quick brown fox jumps over a lazy dog"
+                description="This form allows you to request access to selected asset"
                 isOpen={modalRequest}
                 onClose={closeModalRequest}
             >
-                <Input uniqueId="asset-request-reason" label="Why do you need this feature?" placeholder="Lorem ipsum dolor sit amet..." isMultiline={true} />
+                <Input
+                    uniqueId="asset-request-reason"
+                    label="Why do you need this feature?"
+                    placeholder="Lorem ipsum dolor sit amet..."
+                    isMultiline={true}
+                />
 
                 <Button
                     label="Submit Request"

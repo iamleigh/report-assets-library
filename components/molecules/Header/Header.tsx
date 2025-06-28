@@ -15,17 +15,18 @@ const Header: React.FC<HeaderProps> = ({
     ...props
 }) => {
     return (
-        <header className={clsx(styles['ral-header'])} {...props}>
-            <h1 className={clsx(styles['ral-header__title'])}>{title}</h1>
+        <>
+            <header className={clsx(styles['ral-header'])} {...props}>
+                <h1 className={clsx(styles['ral-header__title'])}>{title}</h1>
 
-            {description && (
-                <p className={clsx(styles['ral-header__description'])}>
-                    {description}
-                </p>
-            )}
-
-            {children}
-        </header>
+                {description && (
+                    <p className={clsx(styles['ral-header__description'])}>
+                        {description}
+                    </p>
+                )}
+                {children}
+            </header>
+        </>
     )
 }
 

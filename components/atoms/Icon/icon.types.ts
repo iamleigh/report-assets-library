@@ -9,6 +9,9 @@ import {
     faChartPie,
     faBookmark,
     faClose,
+    faSignOut,
+    faSignIn,
+    faBars,
 } from '@fortawesome/free-solid-svg-icons'
 import type { SizeProp } from '@fortawesome/fontawesome-svg-core'
 
@@ -23,6 +26,9 @@ export const iconNameMap = {
     pie: faChartPie,
     bookmark: faBookmark,
     close: faClose,
+    logout: faSignOut,
+    login: faSignIn,
+    menu: faBars
 }
 
 export type IconName = keyof typeof iconNameMap

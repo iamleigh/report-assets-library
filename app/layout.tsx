@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import './globals.scss'
 
+import LoginBar from '@molecule/LoginBar/LoginBar'
+
 const geistSans = Geist({
     variable: '--font-geist-sans',
     subsets: ['latin'],
@@ -28,7 +30,8 @@ export default function RootLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
-                <div className="mx-auto max-w-4xl">{children}</div>
+                <LoginBar user="Leighton" />
+                <div className="mx-auto max-w-4xl px-8">{children}</div>
             </body>
         </html>
     )

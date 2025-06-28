@@ -1,11 +1,12 @@
 'use client'
 
 import React, { useState } from 'react'
-import Input from '@atom/Input/Input'
 import Button from '@atom/Button/Button'
 import Header from '@molecule/Header/Header'
 import Footer from '@molecule/Footer/Footer'
 import Modal from '@organism/Modal/Modal'
+import Assets from '@organism/Assets/Assets'
+import type { AssetProps } from '@organism/Assets/Assets'
 
 interface LibraryProps {
     children: React.ReactNode
@@ -16,6 +17,18 @@ const Library: React.FC<LibraryProps> = ({ children }) => {
 
     const openModalRequest = () => setModalRequest(true)
     const closeModalRequest = () => setModalRequest(false)
+
+    const dataSingle: AssetProps = {
+        icon: 'hand',
+        title: 'Item Name',
+        description: 'Short description of the item goes nicely here.',
+        onClick: closeModalRequest,
+    }
+
+    const dataListed: AssetProps[] = Array.from({ length: 6 }, (_, i) => ({
+        ...dataSingle,
+        title: `${dataSingle.title} ${i + 1}`,
+    }))
 
     return (
         <>
@@ -43,24 +56,13 @@ const Library: React.FC<LibraryProps> = ({ children }) => {
                 isOpen={modalRequest}
                 onClose={closeModalRequest}
             >
-                <Input
-                    uniqueId="asset-request-reason"
-                    label="Feature Name"
-                    placeholder="Feature name"
-                    className="mt-8 mb-2"
-                />
-
-                <Input
-                    uniqueId="asset-request-reason"
-                    label="Feature Description"
-                    placeholder="Feature description"
-                    isMultiline={true}
-                />
+                <Assets uniqueId="trending" data={dataListed} />
 
                 <Button
-                    label="Submit Request"
+                    label="Request Asset"
                     isDark={true}
                     fullWidth={true}
+                    className="mt-4"
                     onClick={closeModalRequest}
                 />
             </Modal>

@@ -10,6 +10,7 @@ interface InputProps {
     defaultValue?: string
     placeholder?: string
     isMultiline?: boolean
+    className?: string
     onChange?: (value: string) => void
 }
 
@@ -19,12 +20,15 @@ const Input: React.FC<InputProps> = ({
     label,
     placeholder,
     isMultiline,
+    className,
     onChange,
     ...props
 }) => {
     const [value, setValue] = useState(defaultValue || '')
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    ) => {
         const newValue = e.target.value
         setValue(newValue)
         onChange?.(newValue)
@@ -40,10 +44,13 @@ const Input: React.FC<InputProps> = ({
                 <textarea
                     id={uniqueId}
                     value={value}
-                    className={clsx({
-                        [styles['ral-input']]: true,
-                        [styles['ral-input--multiline']]: isMultiline
-                    })}
+                    className={clsx(
+                        {
+                            [styles['ral-input']]: true,
+                            [styles['ral-input--multiline']]: isMultiline,
+                        },
+                        className,
+                    )}
                     {...(placeholder && { placeholder: placeholder })}
                     onChange={handleChange}
                     data-testid="ral-test--input"
@@ -55,7 +62,7 @@ const Input: React.FC<InputProps> = ({
                 <input
                     id={uniqueId}
                     value={value}
-                    className={clsx(styles['ral-input'])}
+                    className={clsx(styles['ral-input'], className)}
                     {...(placeholder && { placeholder: placeholder })}
                     onChange={handleChange}
                     data-testid="ral-test--input"

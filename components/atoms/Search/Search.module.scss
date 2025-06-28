@@ -1,0 +1,36 @@
+.ral-search {
+	position: relative;
+	@apply border border-gray-300 hover:border-teal-400;
+	@apply rounded-lg;
+	@apply bg-white;
+	@apply transition;
+
+	// Element: Label
+	&__label {
+		@apply sr-only;
+	}
+
+	// Element: Input
+	&__input {
+		@apply block w-full;
+		@apply px-10 py-2;
+		border: 0;
+		outline: none;
+		@apply bg-transparent;
+		@apply text-base text-gray-600;
+	}
+
+	// Element: Icon
+	&__icon {
+		@apply pointer-events-none;
+		@apply absolute;
+		@apply left-3 top-1/2;
+		@apply -translate-y-1/2;
+		@apply text-gray-400;
+	}
+
+	// State: Focus
+	&--focused {
+		@apply outline outline-teal-400;
+	}
+}

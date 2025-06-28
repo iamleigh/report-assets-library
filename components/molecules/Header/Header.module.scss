@@ -1,0 +1,14 @@
+.ral-header {
+	@apply relative;
+	@apply py-8;
+	@apply text-center text-gray-700;
+
+	&__title {
+		@apply mb-4;
+		@apply text-4xl font-extrabold;
+	}
+
+	&__description {
+		@apply text-base;
+	}
+}

@@ -6,36 +6,63 @@ import styles from './Input.module.scss'
 
 interface InputProps {
     uniqueId: string
+    label: string
     defaultValue?: string
     placeholder?: string
+    isMultiline?: boolean
     onChange?: (value: string) => void
 }
 
 const Input: React.FC<InputProps> = ({
     uniqueId,
     defaultValue,
+    label,
     placeholder,
+    isMultiline,
     onChange,
     ...props
 }) => {
     const [value, setValue] = useState(defaultValue || '')
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const newValue = e.target.value
         setValue(newValue)
         onChange?.(newValue)
     }
 
     return (
-        <input
-            id={uniqueId}
-            value={value}
-            className={clsx(styles['ral-input'])}
-            {...(placeholder && { placeholder: placeholder })}
-            onChange={handleChange}
-            data-testid="ral-test--input"
-            {...props}
-        />
+        <div className={clsx(styles['ral-field'])}>
+            <label htmlFor={uniqueId} className="sr-only">
+                {label}
+            </label>
+
+            {isMultiline && (
+                <textarea
+                    id={uniqueId}
+                    value={value}
+                    className={clsx({
+                        [styles['ral-input']]: true,
+                        [styles['ral-input--multiline']]: isMultiline
+                    })}
+                    {...(placeholder && { placeholder: placeholder })}
+                    onChange={handleChange}
+                    data-testid="ral-test--input"
+                    {...props}
+                ></textarea>
+            )}
+
+            {!isMultiline && (
+                <input
+                    id={uniqueId}
+                    value={value}
+                    className={clsx(styles['ral-input'])}
+                    {...(placeholder && { placeholder: placeholder })}
+                    onChange={handleChange}
+                    data-testid="ral-test--input"
+                    {...props}
+                />
+            )}
+        </div>
     )
 }
 

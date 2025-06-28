@@ -1,9 +1,17 @@
+.ral-field {
+}
+
 .ral-input {
-	@apply bg-white;
+	@apply w-full;
 	@apply px-4 py-2;
 	@apply border border-gray-300 hover:border-teal-400 focus:border-teal-400;
 	@apply focus:outline-teal-400;
 	@apply rounded-lg;
+	@apply bg-white;
 	@apply text-base text-gray-600;
 	@apply transition;
+
+	&--multiline {
+		min-height: 240px;
+	}
 }

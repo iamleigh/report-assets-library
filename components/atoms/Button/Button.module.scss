@@ -2,6 +2,7 @@
 	// Button Shape
 	@apply inline-flex;
 	@apply items-center;
+	@apply justify-center;
 	@apply px-4;
 	@apply py-2;
 	@apply rounded-lg;
@@ -21,5 +22,15 @@
 
 	&__label {
 		@apply pl-2;
+	}
+
+	&--dark {
+		@apply bg-gray-900;
+		@apply text-white;
+	}
+
+	&--full-width {
+		@apply w-full;
+		@apply rounded;
 	}
 }

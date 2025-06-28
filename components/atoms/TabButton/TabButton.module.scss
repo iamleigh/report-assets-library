@@ -1,0 +1,24 @@
+.ral-tab-button {
+	// Button Shape
+	@apply px-4;
+	@apply py-2;
+	@apply rounded-sm;
+	@apply bg-gray-300 hover:bg-white disabled:bg-gray-100;
+
+	// Typography
+	@apply text-gray-600 hover:text-gray-900 disabled:text-gray-400;
+	@apply text-sm;
+	@apply font-semibold;
+	@apply transition-all;
+
+	&--selected {
+		@apply pointer-events-none;
+		@apply bg-white;
+		@apply text-gray-900;
+	}
+
+	&:disabled {
+		@apply pointer-events-none;
+		@apply cursor-not-allowed;
+	}
+}

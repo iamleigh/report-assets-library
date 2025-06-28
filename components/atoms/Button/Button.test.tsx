@@ -38,12 +38,7 @@ describe('Button', () => {
      */
     it('triggers onClick event', () => {
         const handleClick = jest.fn()
-        render(
-            <Button
-                label="Click Me"
-                onClick={handleClick}
-            />,
-        )
+        render(<Button label="Click Me" onClick={handleClick} />)
         const ButtonElement = screen.getByTestId('ral-test--button')
 
         ButtonElement.click()

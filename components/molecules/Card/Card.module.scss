@@ -1,0 +1,41 @@
+.ral-card {
+	@apply flex gap-4;
+	@apply px-4 py-4;
+	@apply border border-gray-300 hover:border-teal-300;
+	@apply rounded-md;
+	@apply bg-white;
+	@apply text-sm text-gray-700;
+	@apply transition-all;
+
+	&__icon {
+		@apply flex flex-none items-center;
+		@apply px-6 py-6;
+		@apply rounded-md;
+		@apply bg-gray-200;
+		@apply text-gray-400;
+	}
+
+	&__content {
+		@apply flex-1;
+	}
+
+	&__title,
+	&__description,
+	&__date {
+		@apply block;
+		@apply text-left;
+	}
+
+	&__description,
+	&__date {
+		margin-top: 4px;
+	}
+
+	&__title {
+		@apply font-semibold;
+	}
+
+	&__date {
+		@apply text-xs font-semibold text-gray-400;
+	}
+}

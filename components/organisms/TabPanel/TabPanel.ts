@@ -1,0 +1,5 @@
+export { default as Featured } from './Panel/PanelFeatured'
+export { default as Kpi } from './Panel/PanelKpi'
+export { default as Layout } from './Panel/PanelLayout'
+export { default as DataViz } from './Panel/PanelDataViz'
+export { default as Storyboard } from './Panel/PanelBoard'

@@ -1,0 +1,35 @@
+.ral-icon-button {
+	// Button Shape
+	@apply inline-flex;
+	@apply items-center;
+	@apply justify-center;
+	@apply px-4 py-2;
+	@apply border;
+	@apply rounded-lg;
+	@apply bg-none hover:bg-gray-400;
+
+	// Typography
+	@apply text-gray-400 text-sm hover:text-white;
+	@apply transition-all;
+
+	&:disabled {
+		pointer-events: none;
+		@apply cursor-not-allowed;
+		@apply bg-gray-100;
+		@apply text-gray-400;
+	}
+
+	&__label {
+		@apply pl-2;
+	}
+
+	&--dark {
+		@apply bg-gray-900;
+		@apply text-white;
+	}
+
+	&--full-width {
+		@apply w-full;
+		@apply rounded;
+	}
+}
